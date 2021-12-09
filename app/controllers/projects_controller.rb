@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  before_action :project_initialize, only: [ :destroy, :update]
+  before_action :project_initialize, only: [ :show, :destroy, :update]
 
   def index
     @projects = Project.all
@@ -20,7 +20,7 @@ class ProjectsController < ApplicationController
 
   def destroy
     @project.destroy
-    redirect_to @projects
+    redirect_to projects_path
   end
 
   def new
@@ -29,7 +29,7 @@ class ProjectsController < ApplicationController
 
   def update
     if @project.update(project_params)
-      redirect_to @projects
+      redirect_to projects_path
     else
       redirect_to @project
     end

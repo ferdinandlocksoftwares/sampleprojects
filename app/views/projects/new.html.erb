@@ -1,8 +1,2 @@
-<h1>Projects#index</h1>
-<%= form_with model: @project do | form | %>
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-    <%= form.label :description %>
-    <%= form.text_field :description %>
-    <%= form.submit %>
-<% end %>
+<h1>Projects#new</h1>
+<%= render "form" %>
